@@ -156,6 +156,8 @@ public class Maquina {
              troco = new Montante (-1, -1, -1, -1, -1, -1);
         } else {
             troco = new Montante ();
+            preco = comprador.total() - preco;
+            System.out.println(preco);
             if (preco >= 100) {
                 int r = preco / 100;
                 preco -= 100*r;
@@ -182,7 +184,6 @@ public class Maquina {
 
             if (preco >= 5) {
                 int r = preco / 5;
-                System.out.println(r);
                 preco -= 5*r;
                 troco.setCinco(r);
             }

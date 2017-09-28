@@ -25,7 +25,7 @@ public class Montante {
     }
 
     public String toString () {
-    	return "Dois: " + this.dois + " Cinco: " + this.cinco + " Dez: " + this.dez + " Vinte: " + this.vinte + " Cinqeunta: " + this.cinquenta + " Cem: " + this.cem;
+    	return "Dois: " + this.dois + " Cinco: " + this.cinco + " Dez: " + this.dez + " Vinte: " + this.vinte + " Cinquenta: " + this.cinquenta + " Cem: " + this.cem;
     }
 
     public int getDois(){
