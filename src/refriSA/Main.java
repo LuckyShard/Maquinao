@@ -101,8 +101,13 @@ public class Main {
     	System.out.println("------------------- ESCOLHA UM -------------------");
     	int pro = sc.nextInt();
     	Montante troco = m.selecionarProduto(pro);
-    	System.out.println("--------------------- TROCO ----------------------");
-    	System.out.println(troco.toString());
+    	if (troco.getDois() == -1) {
+    		System.out.println("---------------------------------------------------");
+    		System.out.println("CREDITOS INSUFUCIENTES, DINHEIRO DEVOLVIDO");
+    	} else {
+	    	System.out.println("--------------------- TROCO ----------------------");
+	    	System.out.println(troco.toString());
+    	}
     	m.iniciarCompra();
     }
 }
