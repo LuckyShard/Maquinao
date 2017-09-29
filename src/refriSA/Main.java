@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
     	Scanner sc = new Scanner (System.in);
 
-    	Maquina m = new Maquina ();
+    	Maquina m = new Maquina (50, 1);
     	m.iniciarCompra();
 
     	Produto dollynho = new Produto ("Dollyinho", 5, "Refrigerante", "350ml");
@@ -106,7 +106,7 @@ public class Main {
     		System.out.println("CREDITOS INSUFUCIENTES, DINHEIRO DEVOLVIDO");
     	} else {
 	    	System.out.println("--------------------- TROCO ----------------------");
-	    	System.out.println(troco.toString());
+	    	System.out.println(troco.toString() + " TOTAL: " + troco.total());
     	}
     	m.iniciarCompra();
     }

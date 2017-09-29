@@ -96,7 +96,7 @@ public class Maquina {
     }
 
     public String verCreditos () {
-        return comprador.toString();
+        return comprador.toString() + " TOTAL: " + comprador.total();
     }
 
     public Montante selecionarProduto (int idx) {
@@ -160,38 +160,68 @@ public class Maquina {
             System.out.println(preco);
             if (preco >= 100) {
                 int r = preco / 100;
-                preco -= 100*r;
-                troco.setCem(r);
+                if (montante.getCem() >= r) {
+                    preco -= 100*r;
+                    troco.setCem(r);
+                } else if (montante.getCem() > 0) {
+                    preco -= 100*montante.getCem();
+                    troco.setCem(montante.getCem());
+                }
             }
 
             if (preco >= 50) {
                 int r = preco / 50;
-                preco -= 50*r;
-                troco.setCinquenta(r);
+                if (montante.getCinquenta() >= r) {
+                    preco -= 50*r;
+                    troco.setCinquenta(r);
+                } else if (montante.getCinquenta() > 0) {
+                    preco -= 50*montante.getCinquenta();
+                    troco.setCinquenta(montante.getCinquenta());
+                }
             }
 
             if (preco >= 20) {
                 int r = preco / 20;
-                preco -= 20*r;
-                troco.setVinte(r);
+                if (montante.getVinte() >= r) {
+                    preco -= 20*r;
+                    troco.setVinte(r);
+                } else if (montante.getVinte() > 0) {
+                    preco -= 20*montante.getVinte();
+                    troco.setVinte(montante.getVinte());
+                }
             }
 
             if (preco >= 10) {
                 int r = preco / 10;
-                preco -= 10*r;
-                troco.setDez(r);
+                if (montante.getDez() >= r) {
+                    preco -= 10*r;
+                    troco.setDez(r);
+                } else if (montante.getDez() > 0) {
+                    preco -= 10*montante.getDez();
+                    troco.setDez(montante.getDez());
+                }
             }
 
             if (preco >= 5) {
                 int r = preco / 5;
-                preco -= 5*r;
-                troco.setCinco(r);
+                if (montante.getCinco() >= r) {
+                    preco -= 5*r;
+                    troco.setCinco(r);
+                } else if (montante.getCinco() > 0) {
+                    preco -= 5*montante.getCinco();
+                    troco.setCinco(montante.getDois());
+                }
             }
 
             if (preco >= 2) {
                 int r = preco / 2;
-                preco -= 2*r;
-                troco.setDois(r);
+                if (montante.getDois() >= r) {
+                    preco -= 2*r;
+                    troco.setDois(r);
+                } else if (montante.getDois() > 0) {
+                    preco -= 2*montante.getDois();
+                    troco.setDois(montante.getDois());
+                }
             }
         }
 
